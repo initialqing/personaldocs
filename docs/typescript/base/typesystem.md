@@ -1,0 +1,99 @@
+
+## 1、接口作类型注解
+接口是 TypeScript 的一个核心知识，它能合并众多类型声明至一个类型声明：
+```typescript
+// 定义接口作类型注解
+interface Name {
+  first: string;
+  second: string;
+}
+// 用接口做类型注解
+let username: Name;
+username = {
+  first: 'TS',
+  second: 'Doe',
+};
+username = {
+  // Error:second is missing
+  first: 'John',
+};
+username = {
+  // Error:second is thr wrong type
+  first: '123',
+  second: 123,
+};
+```
+## 2、使用内联类型注解
+可以避免起别名的麻烦，结构为 `变量名:{ /*Structure*/ }`
+```typescript
+// 使用内联类型注解，可以避免起别名的麻烦
+// 结构为 :{具体注解类型}
+let username: {
+  first:string,
+  second:string
+}
+```
+需要多次使用相同的内联注解时，那么考虑把它重构为一个接口（或者是 `type alias`）是一个不错的主意。
+## 3、泛型
+函数 `reverse` 接受一个类型为 `T`（注意在 `reverse<T>` 中的类型参数） 的数组（`items: T[]`），返回值为类型 T 的一个数组（注意：T[]），函数 `reverse` 的返回值类型与它接受的参数的类型一样。当你传入 `const sample = [1, 2, 3]` 时，TypeScript 能推断出 `reverse` 为 `number[]` 类型，从而能给你类型安全。与此相似，当你传入一个类型为 `string[]` 类型的数组时，TypeScript 能推断 `reverse` 为 `string`[] 类型
+```typescript
+function reverse<T>(items: T[]): T[] {
+  const toreturn = [];
+  for (let i = items.length - 1; i >= 0; i--) {
+    toreturn.push(items[i]);
+  }
+  return toreturn;
+}
+
+const sample = [1, 2, 3];
+let reversed = reverse(sample);
+
+// console.log(reversed);
+reversed[1] = '0';Error
+
+```
+Ts内部中的Array数组使用了泛型定义了其结构所以，调用reverse方法会获得类型安全
+
+```typescript
+// JavaScript内置的reverse方法使用泛型定义了其结构
+interface Array<T>{
+  // reverse()的返回值为泛型T[]
+  reverse():T[]
+}
+let reversedNums = sample.reverse()
+reversedNums = ['1','2']//Error
+```
+## 4、联合类型
+如果希望属性类型为多种类型之一就可以使用联合类型使用`|`作为标记,举例`const a:number|string = 1`
+## 5、交叉类型
+从两个对象中刚创建一个新的对象，新的对象中具有两个对象的属性。
+
+```typescript
+function extend<K extends object, T extends object>(first: K,second: T): T & K {
+  const res = <T & K>{};
+  for (let id in first) {
+    (<K>res)[id] = first[id];
+  }
+  for (let id in second) {
+    if (!res.hasOwnProperty(id)) {
+      (<T>res)[id] = second[id];
+    }
+  }
+  return res;
+};
+const x = extend(
+  { name: '123', age: 123, address: 'xian' },
+  { description: 'xxxx' }
+);
+console.log(x)
+```
+## 6、元组类型
+```typescript
+// 元组类型
+let nameNumber:[string,number]
+nameNumber = ['jenny',123123215]
+
+// 与ts中的解构赋值一起使用
+const [username,num] = nameNumber
+console.log(username,num)
+```

@@ -1,0 +1,29 @@
+{
+  "name": "vuepress-mysite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "eslint-scope": "^4.0.3",
+    "prettier": "^2.7.1",
+    "vuepress": "^1.9.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "vuepress dev docs --temp .temp",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/initialqing/docs.git"
+  },
+  "author": "qing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/initialqing/docs/issues"
+  },
+  "homepage": "https://github.com/initialqing/docs#readme"
+}
