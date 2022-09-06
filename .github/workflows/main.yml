@@ -6,7 +6,7 @@ name: Build and deploy
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,15 +26,6 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-<<<<<<< HEAD
-          persist-credentials: false
-
-      # 生成静态文件
-      - name: Build
-        run: pnpm install && pnpm run docs:build
-
-      # 部署到 GitHub Pages
-=======
           node-version: "14"
           
       # 缓存 node_modules
@@ -53,7 +44,6 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
  
->>>>>>> 1c762ba5fe3c50b6b59298d35135806245486639
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
