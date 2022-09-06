@@ -5,11 +5,11 @@ module.exports = {
             { rel: 'icon', href: 'book.png' }
         ]
     ],
-    base: '/docs/',
+    base: '/personaldocs/',
     description: "个人知识记录网站",
     title: "DemoTitle",
     port: "3333",
-    dest:'docs/.vuepress/dist',
+    dest: 'docs/.vuepress/dist',
     themeConfig: {
         logo: '/assets/img/fankaishu.png',
         lastUpdated: '上次更新', // string | boolean
