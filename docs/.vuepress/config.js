@@ -5,6 +5,7 @@ module.exports = {
             { rel: 'icon', href: 'book.png' }
         ]
     ],
+    base:'/docs/',
     description: "个人知识记录网站",
     title: "DemoTitle",
     port: "3333",
