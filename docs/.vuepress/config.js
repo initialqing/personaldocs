@@ -19,6 +19,7 @@ module.exports = {
             { text: 'JavaScript', link: '/js/' },
             { text: 'Css', link: '/css/' },
             { text: 'TypeScript', link: '/typescript/' },
+            { text: '算法总结', link: '/algorithm/' },
             { text: 'Github', link: 'https://github.com/initialqing/docs' },
         ],
         sidebar: {
@@ -51,10 +52,10 @@ module.exports = {
                     title: 'Ts基础',
                     collapsable: false,
                     children: [
-                        { title: '接口 枚举 类型断言', path: '/typescript/base/jiekoumeiju' },
-                        { title: '数据表达', path: '/typescript/base/dataexpress' },
-                        { title: '类型系统', path: '/typescript/base/typesystem' },
-                        { title: '字面量 泛型', path: '/typescript/base/zimianliangfanxing' },
+                        { title: '接口 枚举 类型断言', path: '/typescript/base/接口枚举' },
+                        { title: '数据表达', path: '/typescript/base/数据表达' },
+                        { title: '类型系统', path: '/typescript/base/类型系统' },
+                        { title: '字面量 泛型', path: '/typescript/base/字面量' },
                         { title: 'UnionType', path: '/typescript/base/uniontype' }
                     ]
                 }
@@ -65,6 +66,19 @@ module.exports = {
                     collapsable: false,
                     children: [
                         { title: '响应式基础', path: '/vue/base/reactive' },
+                    ]
+                }
+            ],
+            '/algorithm/':[
+                {
+                    'title':'算法专题',
+                    collapsable:false,
+                },
+                {
+                    'title':'算法总结',
+                    collapsable:false,
+                    children:[
+                        { title: '查找', path: '/algorithm/binarysearch/binary' },
                     ]
                 }
             ]
