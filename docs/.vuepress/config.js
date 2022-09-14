@@ -10,6 +10,7 @@ module.exports = {
     title: "DemoTitle",
     port: "3333",
     dest: 'docs/.vuepress/dist',
+    dest:'public',
     themeConfig: {
         logo: '/assets/img/fankaishu.png',
         lastUpdated: '上次更新', // string | boolean
