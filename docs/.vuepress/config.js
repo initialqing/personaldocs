@@ -21,7 +21,7 @@ module.exports = {
             { text: 'Css', link: '/css/' },
             { text: 'TypeScript', link: '/typescript/' },
             { text: '算法总结', link: '/algorithm/' },
-            { text: 'Github', link: 'https://github.com/initialqing/docs' },
+            { text: 'Github', link: 'https://github.com/initialqing/personaldocs' },
         ],
         sidebar: {
             '/css/': [
