@@ -8,7 +8,7 @@ export default {
         ]
     ],
     colorMode: 'auto',
-    base: '/personaldocs/',
+    base: '/',
     description: "个人知识记录网站",
     title: "DemoTitle",
     port: "3333",
@@ -87,6 +87,7 @@ export default {
                     collapsible: false,
                     children: [
                         { text: '查找', link: '/algorithm/binarysearch/binary' },
+                        { text: 'bfs&dfs', link: '/algorithm/dfs&bfs/bfs' },
                     ]
                 }
             ]
