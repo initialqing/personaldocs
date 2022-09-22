@@ -1,18 +1,22 @@
 import { defaultTheme } from '@vuepress/theme-default'
+
+const defaultOptions = {
+    level: [1, 2, 3],
+}
 export default {
     lang: 'zh-CN',
-    head: [
-        [
-            'link',
-            { rel: 'icon', href: 'book.png' }
-        ]
-    ],
     colorMode: 'auto',
     base: '/',
     description: "个人知识记录网站",
     title: "DemoTitle",
     port: "3333",
     dest: 'docs/.vuepress/dist',
+    head: [
+        [
+            'link',
+            { rel: 'icon', href: 'book.png' }
+        ]
+    ],
     // 显示在导航栏的左端
     theme: defaultTheme({
         // 主题配置
@@ -80,17 +84,36 @@ export default {
             '/algorithm/': [
                 {
                     text: '算法专题',
-                    collapsible: true,
+                    collapsible: false,
+                    link: '/algorithm/README.md'
                 },
                 {
-                    text: '算法总结',
+                    text: '动态规划',
+                    collapsible: false,
+                    children: [
+                        { text: '子序列问题', link: '/algorithm/dp/subsequence' },
+                    ]
+                },
+                {
+                    text: '二分查找',
                     collapsible: false,
                     children: [
                         { text: '查找', link: '/algorithm/binarysearch/binary' },
+                    ]
+                },
+                {
+                    text: 'dfs&bfs',
+                    collapsible: false,
+                    children: [
                         { text: 'bfs&dfs', link: '/algorithm/dfs&bfs/bfs' },
                     ]
                 }
             ]
         }
-    })
+    }),
+    markdown: {
+        toc: {
+            level: [1, 2]
+        }
+    }
 }
