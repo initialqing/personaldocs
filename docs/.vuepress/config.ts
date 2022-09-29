@@ -1,8 +1,5 @@
 import { defaultTheme } from '@vuepress/theme-default'
 
-const defaultOptions = {
-    level: [1, 2, 3],
-}
 export default {
     lang: 'zh-CN',
     colorMode: 'auto',
@@ -17,6 +14,7 @@ export default {
             { rel: 'icon', href: 'book.png' }
         ]
     ],
+    displayAllHeaders: true,
     // 显示在导航栏的左端
     theme: defaultTheme({
         // 主题配置
@@ -24,6 +22,8 @@ export default {
         colorMode: 'auto',
         colorModeSwitch: true,
         home: '/',
+        sidebarDepth:2,
+         // 默认值：false
         navbar: [
             { text: '主页', link: '/' },
             { text: 'Vue', link: '/vue/' },
@@ -107,13 +107,25 @@ export default {
                     children: [
                         { text: 'bfs&dfs', link: '/algorithm/dfs&bfs/bfs' },
                     ]
+                },
+                {
+                    text: '二叉树相关',
+                    link: '/algorithm/binarytree/binarytree',
+                    collapsible: false,
+                    children: [
+                        { text: '二叉树遍历', link: '/algorithm/binarytree/order' },
+                        { text: '二叉搜索树', link: '/algorithm/binarytree/binarysearchtree' },
+                        { text: '二叉树的公共祖先', link: '/algorithm/binarytree/ancestor' },
+                        { text: '二叉树的构造', link: '/algorithm/binarytree/refactor' },
+                        { text: '二叉树的属性', link: '/algorithm/binarytree/Attributes' },
+                    ]
                 }
             ]
         }
     }),
     markdown: {
         toc: {
-            level: [1, 2]
-        }
+            level: [1, 2,3]
+        },
     }
 }
