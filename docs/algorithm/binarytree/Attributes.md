@@ -594,7 +594,6 @@ function findBottomLeftValue(root: TreeNode | null): number {
         }
         levelOrder.push(temp)
     }
-
     return levelOrder[levelOrder.length - 1][0]
 };
 ```

@@ -110,7 +110,7 @@ export default {
                 },
                 {
                     text: '二叉树相关',
-                    link: '/algorithm/binarytree/binarytree',
+                    link: '/algorithm/binarytree/',
                     collapsible: false,
                     children: [
                         { text: '二叉树遍历', link: '/algorithm/binarytree/order' },
@@ -119,6 +119,10 @@ export default {
                         { text: '二叉树的构造', link: '/algorithm/binarytree/refactor' },
                         { text: '二叉树的属性', link: '/algorithm/binarytree/Attributes' },
                     ]
+                },
+                {
+                    text: '回溯算法',
+                    link: '/algorithm/backtracking/',
                 }
             ]
         }
