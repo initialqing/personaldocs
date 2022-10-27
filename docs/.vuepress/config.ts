@@ -123,6 +123,14 @@ export default {
                 {
                     text: '回溯算法',
                     link: '/algorithm/backtracking/',
+                    children: [
+                        {text:'组合问题',link:'/algorithm/backtracking/zuhe'},
+                        {text:'分割问题',link:'/algorithm/backtracking/fenge'},
+                        {text:'子集问题',link:'/algorithm/backtracking/ziji'},
+                        {text:'排列问题',link:'/algorithm/backtracking/pailie'},
+                        {text:'棋盘问题',link:'/algorithm/backtracking/qipan'},
+                        {text:'其他问题',link:'/algorithm/backtracking/qita'}
+                    ]
                 }
             ]
         }
